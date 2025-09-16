@@ -1,0 +1,234 @@
+<!--
+  Archivo: index.html
+  Uso: página estática lista para GitHub Pages.
+
+  INSTRUCCIONES RÁPIDAS:
+  1) Reemplaza los textos entre {{...}} por tus datos reales.
+     - Clinica Dental Santiago: nombre de la clínica
+     - Cartagena: ciudad (ej. Cartagena)
+     - C/San Francisco 3, 1ºA: dirección completa
+     - +34 622453416: teléfono visible (ej. +34 600 000 000)
+     - 34622453416: número en formato internacional sin signos (ej. 34600000000)
+     - info@clinicadental-santiago.es: email de contacto
+     - {{MAP_EMBED_URL}}: URL del iframe de Google Maps (opcional)
+     - {{FORMSPREE_ENDPOINT}}: (opcional) endpoint de Formspree u otro servicio de formularios
+     - Reemplaza las rutas de imágenes en /assets/ si las subes
+
+  2) Guarda este archivo como index.html en la raíz del repo.
+  3) (Opcional) Sube imágenes en carpeta /assets/ y edita sus rutas.
+  4) Sube al repositorio GitHub y activa Pages (Settings -> Pages -> Branch: main / root).
+
+  NOTA: es una página estática. El formulario envía a Formspree si pones tu endpoint.
+-->
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{CLINICA DENTAL SANTIAGO}} — Clínica dental en {{Cartagena}}</title>
+  <meta name="description" content="Clínica dental en {{Cartagena}}. Implantes, ortodoncia, estética dental y revisiones. Pide cita por WhatsApp.">
+  <link rel="icon" href="/assets/favicon.png">
+
+  <!-- Open Graph básico -->
+  <meta property="og:title" content="{{CLINICA DENTAL SANTIAGO}} — Clínica dental en {{Cartagena}}">
+  <meta property="og:description" content="Implantes, ortodoncia, estética dental y revisiones. Pide cita por WhatsApp.">
+  <meta property="og:type" content="website">
+
+  <style>
+    :root{
+      --max-width:1100px; --accent:#0b7bd6; --muted:#666; --bg:#f7f9fb; --card:#fff;
+      --radius:14px; --gap:18px; font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#111;line-height:1.45}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max-width);margin:28px auto;padding:0 18px}
+
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo img{height:56px;border-radius:10px}
+    nav{display:flex;gap:14px;align-items:center}
+    .cta{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;font-weight:600}
+
+    /* Hero */
+    .hero{background:linear-gradient(180deg, rgba(11,123,214,0.08), rgba(11,123,214,0.02));padding:28px;border-radius:var(--radius);display:flex;gap:20px;align-items:center}
+    .hero-left{flex:1}
+    .hero h1{margin:0 0 10px;font-size:clamp(22px,4.2vw,36px)}
+    .hero p{margin:0 0 14px;color:var(--muted)}
+
+    .hero .actions{display:flex;gap:10px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;font-weight:600}
+    .btn-outline{border:2px solid var(--accent);color:var(--accent);background:transparent}
+
+    .hero-right{width:320px;flex:0 0 320px}
+    .hero-right img{width:100%;height:220px;object-fit:cover;border-radius:10px;display:block}
+
+    /* Servicios */
+    .grid{display:grid;gap:14px}
+    .services{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:18px}
+    .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(18,20,23,0.04)}
+    .card h3{margin:0 0 8px}
+    .muted{color:var(--muted);font-size:0.95rem}
+
+    /* Equipo y contacto */
+    .two{display:grid;grid-template-columns:1fr 300px;gap:18px;margin-top:18px}
+    .team img{width:72px;height:72px;border-radius:10px;object-fit:cover}
+
+    footer{margin-top:28px;padding:18px 0;color:var(--muted);font-size:0.95rem;text-align:center}
+
+    /* Responsive */
+    @media (max-width:820px){
+      .hero{flex-direction:column}
+      .hero-right{width:100%;flex:unset}
+      .two{grid-template-columns:1fr}
+      nav{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <img src="/assets/logo.png" alt="Logo {{CLINIC_NAME}}">
+        <div>
+          <div style="font-weight:700">{{CLINICA DENTAL SANTIAGO}}</div>
+          <div class="muted">Clínica dental • {{Cartagena}}</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#servicios">Servicios</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#contacto">Contacto</a>
+        <a class="cta" href="https://wa.me/{{WHATSAPP_NUMBER}}">Pide cita</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero card">
+        <div class="hero-left">
+          <h1>Clínica dental en {{Cartagena}} — cuidado profesional y trato cercano</h1>
+          <p>Implantes, ortodoncia, estética dental y revisiones. Tratamientos personalizados con la última tecnología.</p>
+          <div class="actions">
+            <a class="btn cta" href="https://wa.me/{{34622453416}}">Pide tu cita por WhatsApp</a>
+            <a class="btn btn-outline" href="#contacto">Contacto & mapa</a>
+          </div>
+          <div style="margin-top:14px;color:var(--muted)">
+            <strong>Dirección:</strong> {{C/San Francisco 3, 1ºA}} • <strong>Tel:</strong> <a href="tel:{{868092929}}">{{868092929}}</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <img src="/assets/clinic-hero.jpg" alt="Sala de la clínica {{CLINICA DENTAL SANTIAGO}}">
+        </div>
+      </section>
+
+      <section id="servicios" style="margin-top:18px">
+        <h2>Servicios</h2>
+        <div class="grid services">
+          <article class="card">
+            <h3>Implantes dentales</h3>
+            <p class="muted">Solución fija para recuperar tu sonrisa con planes personalizados.</p>
+          </article>
+          <article class="card">
+            <h3>Ortodoncia</h3>
+            <p class="muted">Opciones invisibles y tradicionales para todas las edades.</p>
+          </article>
+          <article class="card">
+            <h3>Estética dental</h3>
+            <p class="muted">Blanqueamientos, carillas y diseños de sonrisa.</p>
+          </article>
+          <article class="card">
+            <h3>Higiene y revisiones</h3>
+            <p class="muted">Prevención y tratamientos conservadores para cuidar tu salud bucal.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="equipo" style="margin-top:18px">
+        <h2>Equipo</h2>
+        <div class="grid">
+          <div class="card" style="display:flex;gap:12px;align-items:center">
+            <img src="/assets/doctor.jpg" alt="Dr. {{CLINICA DENTAL SANTIAGO}}">
+            <div>
+              <div style="font-weight:700">Santiago — Odontólogo</div>
+              <div class="muted">Especialista en implantes y estética dental. Más de 10 años de experiencia.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin-top:18px">
+        <h2>Galería</h2>
+        <div class="grid services">
+          <img src="/assets/case1.jpg" alt="Antes y después" style="width:100%;border-radius:10px">
+          <img src="/assets/case2.jpg" alt="Tratamiento" style="width:100%;border-radius:10px">
+        </div>
+      </section>
+
+      <section id="contacto" style="margin-top:18px">
+        <h2>Contacto</h2>
+        <div class="two">
+          <div class="card">
+            <p class="muted"><strong>Dirección:</strong> {{C/San Francisco 3, 1ºA}}</p>
+            <p class="muted"><strong>Tel:</strong> <a href="tel:{{868092929}}">{{868092929}}</a></p>
+            <p class="muted"><strong>Email:</strong> <a href="mailto:{{info@clinicadenta-santiago.es}}">{{info@clinicadental-santiago.es}}</a></p>
+
+            <form action="https://formspree.io/f/{{FORMSPREE_ENDPOINT}}" method="POST" style="margin-top:10px;display:grid;gap:8px">
+              <input name="name" placeholder="Tu nombre" required style="padding:10px;border-radius:8px;border:1px solid #e6eef9">
+              <input name="email" type="email" placeholder="Tu email" required style="padding:10px;border-radius:8px;border:1px solid #e6eef9">
+              <textarea name="message" placeholder="Mensaje / solicitud de cita" rows="4" required style="padding:10px;border-radius:8px;border:1px solid #e6eef9"></textarea>
+              <button class="btn cta" type="submit">Enviar mensaje</button>
+              <div class="muted" style="font-size:0.85rem">O envía un WhatsApp directo: <a href="https://wa.me/{{34622453416}}">Abrir chat</a></div>
+            </form>
+          </div>
+
+          <aside class="card">
+            <h3>Mapa</h3>
+            <!-- Sustituye {{MAP_EMBED_URL}} por el iframe de Google Maps (opcional) -->
+            <!-- Ejemplo: https://www.google.com/maps/embed?pb=... -->
+            <div style="width:100%;height:220px;background:#eef6ff;border-radius:10px;overflow:hidden">
+              <iframe src="{{MAP_EMBED_URL}}" width="100%" height="220" style="border:0" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      © <span id="year"></span> {{CLINICA DENTAL SANTIAGO}} — {{Cartagena}} • <a href="mailto:{{info@clinicadental-santiago.es}}">{{info@clinicadental-santiago.es}}</a>
+    </footer>
+  </div>
+
+  <script>
+    // Pequeño script para el año automático
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mejorar enlaces wa.me: si no has cambiado el placeholder, ocultar
+    (function(){
+      const wa = '{{34622453416}}';
+      if(wa.includes('{{') || wa.trim()==='') return; // placeholder no cambiado
+      // añade tracking simple al CTA (opcional)
+      // document.querySelectorAll('a[href*="wa.me"]').forEach(a=>a.addEventListener('click', ()=>console.log('Ir a WhatsApp')));
+    })();
+  </script>
+
+  <!-- JSON-LD LocalBusiness (reemplaza campos) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "{{CLINICA DENTAL SANTIAGO}}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{C/San Francisco 3, 1ºA}}",
+      "addressLocality": "{{Cartagena}}"
+    },
+    "telephone": "{{868092929}}",
+    "url": "https://{{GITHUB_USERNAME}}.github.io/{{REPO_NAME}}/",
+    "sameAs": []
+  }
+  </script>
+</body>
+</html>
